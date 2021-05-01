@@ -1,8 +1,9 @@
 flask
 nltk
 spacy
-spacy.lemmatizer
 gensim
 pattern
 ./nl_core_news_sm-2.3.0.tar.gz
 gunicorn
+setuptools
+wheel
