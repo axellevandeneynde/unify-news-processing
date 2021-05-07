@@ -7,3 +7,4 @@ pattern
 gunicorn
 setuptools
 wheel
+pymongo

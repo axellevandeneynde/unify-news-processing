@@ -49,7 +49,8 @@ def getDutchArticlesLabels(articles):
         filteredEntities = []
         # print(entities)
         for entity in entities:
-            filteredEntities.append(entity[0])
+            if entity[1] != 'CARDINAL' and entity[1] != 'ORDINAL':
+                filteredEntities.append(entity[0])
 
         # TO DO: find a way to lemmatize dutch words!!!!!
 
@@ -59,11 +60,11 @@ def getDutchArticlesLabels(articles):
         for label in labels:
             lowerCaseLabels.append(label.lower())
         labelsWithoutDuplicates = list(OrderedDict.fromkeys(lowerCaseLabels))
-
         # ----- add labels to article dict
         article.update({
             'labels': labelsWithoutDuplicates
         })
+
     return articles
 
 
@@ -73,10 +74,10 @@ app.config["DEBUG"] = True
 
 # ------- Routes
 
-# accepts an array of objects with at least a key 'title' and a key 'text'
+# accepts an array of objects with at least a key 'title' and a key 'description'
 
 
-@app.route('/generateDutchLabels', methods=['POST'])
+@ app.route('/generateDutchLabels', methods=['POST'])
 def generateDutchLabels():
     req_data = request.get_json()
     response = json.dumps(getDutchArticlesLabels(req_data))
