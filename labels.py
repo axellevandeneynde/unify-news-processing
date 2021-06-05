@@ -8,10 +8,10 @@ import json
 # https://programmerbackpack.com/automated-python-keywords-extraction-textrank-vs-rake/
 from gensim.summarization import keywords
 # https://github.com/susanli2016/NLP-with-Python/blob/master/NER_NLTK_Spacy.ipynb
+
 import spacy
-import nl_core_news_lg
 print('loading dutch model...')
-nlp = nl_core_news_lg.load()
+nlp = spacy.load('nl_core_news_lg')
 print('loaded')
 stopWordsDutch = set(stopwords.words('dutch'))
 
