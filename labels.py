@@ -2,8 +2,8 @@ import flask
 from flask import request
 from collections import OrderedDict
 from nltk.corpus import stopwords
-from spacy.lookups import Lookups
-from spacy.lemmatizer import Lemmatizer
+# from spacy.lookups import Lookups
+# from spacy.lemmatizer import Lemmatizer
 import json
 # https://programmerbackpack.com/automated-python-keywords-extraction-textrank-vs-rake/
 from gensim.summarization import keywords
