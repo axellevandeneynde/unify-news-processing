@@ -1,4 +1,3 @@
-import os
 import flask
 from flask import request
 from collections import OrderedDict
@@ -85,6 +84,4 @@ def generateDutchLabels():
     return response
 
 
-port = int(os.environ.get("PORT", 5000))
-
-app.run(host='0.0.0.0', port=port)
+app.run()
