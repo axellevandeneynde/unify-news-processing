@@ -5,10 +5,9 @@ from nltk.corpus import stopwords
 # from spacy.lookups import Lookups
 # from spacy.lemmatizer import Lemmatizer
 import json
-# https://programmerbackpack.com/automated-python-keywords-extraction-textrank-vs-rake/
+# https://programmerbackpack.com/automated-python-keywords-extraction-textrank-vs-rake
 from gensim.summarization import keywords
 # https://github.com/susanli2016/NLP-with-Python/blob/master/NER_NLTK_Spacy.ipynb
-
 import spacy
 print('loading dutch model...')
 nlp = spacy.load('nl_core_news_lg')
@@ -51,8 +50,6 @@ def getDutchArticlesLabels(articles):
         for entity in entities:
             if entity[1] != 'CARDINAL' and entity[1] != 'ORDINAL':
                 filteredEntities.append(entity[0])
-
-        # TO DO: find a way to lemmatize dutch words!!!!!
 
         # ------ putting labels together & clean them up
         labels = filterdKeywords + filteredEntities
